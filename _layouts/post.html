@@ -11,20 +11,16 @@ layout: default
     {{ content }}
 </div>
 
-<div class="tags my-4">
+<div class="tags">
     {% for tag in page.tags %}
         {% include tag.html tag=tag %}
     {% endfor %}
 </div>
 
 {% unless site.hide_share_buttons %}
-    <div class="my-4">
-        {% include share-buttons.html %}
-    </div>
+    {% include share-buttons.html %}
 {% endunless %}
 
 {% if site.disqus.shortname %}
-    <div class="my-4">
-        {% include disqus.html %}
-    </div>
+    {% include disqus.html %}
 {% endif %}
